@@ -24,7 +24,7 @@ public class UserService : IUserService
             entry =>
             {
                 entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(30);
-                entry.SlidingExpiration = TimeSpan.FromSeconds(5);
+                entry.SlidingExpiration = TimeSpan.FromSeconds(10);
                 return _repository.GetUsers();
             }
         )!;
@@ -38,7 +38,7 @@ public class UserService : IUserService
             entry =>
             {
                 entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(30);
-                entry.SlidingExpiration = TimeSpan.FromSeconds(5);
+                entry.SlidingExpiration = TimeSpan.FromSeconds(10);
                 return _repository.GetUser(userId);
             }
         )!;
