@@ -165,7 +165,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
     }
 ```
 
-- The GetOrCreate method is used to retrieve data from the cache or add it if it doesn't exist. You can check Defination of [GetOrCreateAsync](/DistribuedCache/Extensions/DistributedCacheExtensions.cs) Extension method for Distributed caching.
+- The `GetOrCreateAsync` method is used to retrieve data from the cache or add it if it doesn't exist. You can check Defination of [GetOrCreateAsync](/DistribuedCache/Extensions/DistributedCacheExtensions.cs#L44) Extension method for Distributed caching.
 
 # Cache Invalidation in .NET
 
@@ -192,7 +192,7 @@ _cache.Remove(cacheKey);
 var cacheEntryOptions = new MemoryCacheEntryOptions
 {
     AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-     SlidingExpiration = TimeSpan.FromMinutes(10)
+     SlidingExpiration = TimeSpan.FromMinutes(5)
 };
 _cache.Set(cacheKey, data, cacheEntryOptions);
 ```
